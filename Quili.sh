@@ -71,6 +71,9 @@ export GOROOT_BOOTSTRAP=$GOROOT
 gvm install go1.20.2
 gvm use go1.20.2
 
+# 在~进行构建
+cd
+
 # 克隆仓库
 git clone https://github.com/quilibriumnetwork/ceremonyclient
 
@@ -153,7 +156,7 @@ Description=Ceremony Client GO App Service
 Type=simple
 Restart=always
 RestartSec=5S
-WorkingDirectory=/root/ceremonyclient/node
+WorkingDirectory=~/ceremonyclient/node
 Environment=GOEXPERIMENT=arenas
 ExecStart=/root/.gvm/pkgsets/go1.20.2/global/bin/node ./...
 
